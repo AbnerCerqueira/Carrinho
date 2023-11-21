@@ -4,13 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
 </head>
 
-<body onload="Carrinho(), Iniciar()">
-    <script src="js.js"></script>
-    <div id="produtos">
+<body>
+    <div class="form">
+        <input type="text" placeholder="User" id="user">
+        <br>
+        <input type="password" placeholder="Senha" id="pass">
+        <br>
+        <button onclick="Logar()">Login</button>
+        <br>
+        <a href="cadastro.html">Criar conta</a>
     </div>
+    <script src="login.js"></script>
 </body>
 
 </html>
