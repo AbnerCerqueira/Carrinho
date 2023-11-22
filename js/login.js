@@ -1,5 +1,5 @@
 function Usuario() {
-    if (localStorage.getItem("banco") === null) {
+    if (localStorage.getItem("usuario") === null) {
         const usuario = [{ id: 0, user: "admin", pass: "admin" }]
         localStorage.setItem("usuario", JSON.stringify(usuario))
     }
