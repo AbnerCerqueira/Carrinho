@@ -4,15 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadstro</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/cadastro.css">
 </head>
 
-<body onload="Carrinho(), Iniciar(), Nome()">
-    Bem Vindo <a id="nome"></a>
-    <script src="login.js"></script>
-    <script src="carrinho.js"></script>
-    <div id="produtos">
+<body onload="Usuario()">
+    <div class="container login-container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 login-form-1">
+                <h3>Cadastro</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="user" placeholder="Usuario"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id = "pass"placeholder="Senha"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="button" class="btnSubmit" value="Login"  onclick="Cadastro()"/>
+                    </div>
+                    <div class="form-group">
+                        <a href="index.html" class="ForgetPwd">Realizar login!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+
+    <script src="js/login.js"></script>
 </body>
 
 </html>
