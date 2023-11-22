@@ -1,36 +1,50 @@
-function Carrinho() {
-    const banco = [
-        { id: 0, nome: "arroz", qtde: 0, img: "arroz.jpg", preco: 10.00 },
-        { id: 0, nome: "feijao", qtde: 0, img: "feijao.jpg", preco: 10.00 }
-    ]
-    sessionStorage.setItem("banco", JSON.stringify(banco))
+function insereBanco(){
+    const banco = [{id: Date.now(),nome: "Maçã", valor: 1},
+                    {id: Date.now(),nome: "Banana", valor :1},
+                    {id: Date.now(),nome: "Abacaxi", valor: 1},
+                    {id: Date.now(),nome: "Manga", valor: 1},
+                    {id: Date.now(),nome: "Laranja", valor: 1},
+                    {id: Date.now(),nome: "Morango", valor: 1}
+                ]
+    const carrinho = []
+
+    let bd = JSON.stringify(banco)
+    let car = JSON.stringify(carrinho)
+
+    localStorage.setItem("bd",bd)
+    localStorage.setItem("car",car)
 }
-function Iniciar() {
-    const banco = JSON.parse(sessionStorage.getItem("banco"))
-    for (i = 0; i < banco.length; i++) {
-        document.querySelector("#produtos").innerHTML += `
-            <div class = "produto-single">
-                <img src = `+ banco[i].img + ` height="100px"">
-                `+ banco[i].nome + `
-                <button class="botao" onclick="Adicionar()" value="`+ i + `">+1</button>
-            </div>
-                                                        `
-    }
-}
-function Adicionar() {
-    const banco = JSON.parse(sessionStorage.getItem("banco"))
-    let produto = document.querySelectorAll(".botao")
-    console.log(produto)
-    for (i = 0; i < banco.length; i++) {
-        if (produto[i].value == banco[i].id) {
-            banco[i].qtde += 1
-            sessionStorage.setItem("banco", JSON.stringify(banco))
+
+function Create(button) {
+    const dados = JSON.parse(localStorage.getItem("bd"));
+    const carrinho = JSON.parse(localStorage.getItem("car"));
+
+    let nome = button.previousElementSibling.value;
+
+    let itemExistente = false;
+
+    for (let i = 0; i < carrinho.length; i++) {
+        if (carrinho[i].nome == nome) {
+            carrinho[i].quantidade++;
+            carrinho[i].valor += dados[i].valor;
+            itemExistente = true;
+            break;
         }
     }
-}
-function Adicionar1() {
-    const banco = JSON.parse(sessionStorage.getItem("banco"))
-    let produto = document.querySelectorAll(".botao")
-    banco[1].qtde += 1
-    sessionStorage.setItem("banco", JSON.stringify(banco))
+
+    if (!itemExistente) {
+        let data = {
+            id: dados.find(item => item.nome == nome).id,
+            nome: nome,
+            quantidade: 1,
+            valor: dados.find(item => item.nome == nome).valor
+        };
+        carrinho.push(data);
+    }
+
+    const ds = JSON.stringify(dados);
+    const car = JSON.stringify(carrinho);
+
+    localStorage.setItem("bd", ds);
+    localStorage.setItem("car", car);
 }
