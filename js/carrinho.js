@@ -73,7 +73,7 @@ function Exibe(button) {
     }
     console.log(carrinho[0].quantidade)
 }
-function remove(button){
+function remove(button) {
     const dados = JSON.parse(localStorage.getItem("bd"));
     const carrinho = JSON.parse(sessionStorage.getItem("car"));
 
@@ -82,8 +82,13 @@ function remove(button){
 
     for (let i = 0; i < carrinho.length; i++) {
         if (carrinho[i].nome == nome) {
-            carrinho[i].quantidade--;
-            break;
+            if (carrinho[i].quantidade <= 0) {
+                null
+            }
+            else {
+                carrinho[i].quantidade--;
+                break;
+            }
         }
     }
 
@@ -95,15 +100,16 @@ function remove(button){
 }
 function Total() {
     const carrinho = JSON.parse(sessionStorage.getItem("car"));
-    let total = 0
+    var total = 0
     for (i = 0; i < carrinho.length; i++) {
         total += carrinho[i].valor * carrinho[i].quantidade
     }
-    document.querySelector("#total-exibe").innerHTML = total
-    return total
+    document.querySelector("#total-exibe").innerHTML = 'R$ ' + total.toFixed(2)
+    return total.toFixed(2)
 }
 function Fim() {
-    const carrinho = JSON.parse(sessionStorage.getItem("car"));
-    alert("TOTAL: R$ " + Total() + "\nOBRIGADO POR COMRAR\nVOLTE SEMPRE NO SACOLÃO DO JOÃO")
+    document.querySelector("#final").innerHTML = 'TOTAL: R$ ' + Total() + '<br>VOLTE SEMPRE'
+}
+function Recarrega() {
     window.location.reload()
 }

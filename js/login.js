@@ -8,7 +8,7 @@ function Cadastro() {
     const usuario = JSON.parse(localStorage.getItem("usuario"))
     let user = document.querySelector("#user").value
     let pass = document.querySelector("#pass").value
-    let dados = { id:Date.now(),user: user, pass: pass }
+    let dados = { id: Date.now(), user: user, pass: pass }
     usuario.push(dados)
     localStorage.setItem("usuario", JSON.stringify(usuario))
     window.location.replace("index.html")
@@ -27,7 +27,7 @@ function Logar() {
         }
     }
 
-    if(!usuariologado) {
+    if (!usuariologado) {
         alert("Usuário ou Senha errados")
         window.location.reload()
     }

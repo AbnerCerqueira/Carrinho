@@ -1,49 +1,160 @@
-* {   
-    padding: 0;   
-    margin: 0;     
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
-  }
-
-.row{
-    background-color: rgb(202, 214, 177);
-
 }
-body{
-    background-color: #D9D9D9;
+
+#header {
+    background-color: transparent;
 }
-#main{
+
+body {
+    background-image: url(../img/feira.jpg);
+}
+
+#resultado {
+    display: flex;
+}
+
+.comprar {
+    margin-left: 10px;
+    color: white;
+    padding: 10px 10px;
+    background-color: #04AA6D;
+    text-decoration: none;
+    border: none;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.row {
+    /* background-color: rgb(202, 214, 177); */
+    background-color: white;
+}
+
+#main {
     margin-top: 20px;
 }
-#titulo{
+
+#titulo {
     margin-top: 30px;
     text-align: center;
 }
 
-.img{
+.fundo-titulo {
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.img {
     width: 250px;
     height: 250px;
 }
 
-.botão{
+.botão {
     align-items: center;
     text-align: center;
     border-left: 100px;
     align-content: center;
 }
 
-.numero{
+.numero {
     padding: 10px;
 }
-#total{
+
+#total {
     margin-left: 20px;
 }
-.retangulo{
-    text-align: center;
+
+.retangulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 300px;
     height: 52px;
     font-size: 20px;
     flex-shrink: 0;
     background: white;
+    border-radius: 5px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.botao {
+    color: white;
+    height: 40px;
+    width: 40px;
+    background-color: #04AA6D;
+    text-decoration: none;
+    border: none;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.botao:hover {
+    background-color: #198754;
+}
+
+.botao-n {
+    color: white;
+    height: 40px;
+    width: 40px;
+    background-color: #f44336;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.botao-n:hover {
+    background-color: #BB2D3B;
+}
+
+#abrir-popup:checked~#conteudo {
+    display: block;
+}
+
+#fechar-popup:checked~#conteudo,
+#fechar-popup:checked~#fechar-popup-btn {
+    display: none;
+}
+
+#conteudo {
+    text-align: center;
+    box-sizing: border-box;
+    position: fixed;
+
+    margin: auto;
+    width: 60%;
+    height: 150px;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+#fechar-popup-btn {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    background-color: #f44336;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
+#teste{
+    display: flex;
+    justify-content: flex-end;
 }

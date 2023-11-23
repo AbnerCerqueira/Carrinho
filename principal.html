@@ -10,13 +10,21 @@
     <title>Carrinho</title>
 </head>
 <header>
-    <div class="row">
-        <h2 id="titulo">Sacolão do João</h2>
+    <div>
+        <h2 id="titulo"><a class="fundo-titulo">Sacolão do João</a></h2>
         <div id="total">
             <div>
-                <h2>Total a pagar</h3>
-                    <div class="retangulo">R$ <a id="total-exibe"></a></div>
-                    <button class="btn btn-success" , onclick="Fim()">Comprar</button>
+                <h3><a class="fundo-titulo">Total a pagar</a></h3>
+                <div id="resultado">
+                    <div class="retangulo"><a id="total-exibe"></a></div>
+                    <input id="fechar-popup" name="popup" type="radio" hidden checked>
+                    <input id="abrir-popup" name="popup" type="radio" hidden>
+                    <label class="comprar" for="abrir-popup" onclick="Fim()">Comprar</label>
+                    <div id="conteudo">
+                        <div id="teste" ><label id="fechar-popup-btn" for="fechar" onclick="Recarrega()">X</label></div>
+                        <div id="final"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -25,8 +33,6 @@
 <body onload="insereBanco()">
     <div class="container" id="main">
         <div class="row">
-
-
             <div class="col-4 border border-black d-flex justify-content-center">
                 <div>
                     <img src="img/abacaxi.jpg" class="img" alt="abacaxi" height="200px" width="200px">
@@ -34,12 +40,12 @@
                         <br>
                         Quantidade: <a id="numero1">0</a>
                     </p>
-                    <input type="hidden" id="nome" value="Abacaxi">
-                    <button class="btn btn-success" value="Adicionar" onclick="Create(this),Exibe(this),Total()">Adicionar</button>
-
-                    <button class="btn btn-danger" onclick="remove(this)">Remover</button>
-                    <input type="hidden" id="nome" value="Abacaxi">
-
+                    <div class="botoes">
+                        <input type="hidden" id="nome" value="Abacaxi">
+                        <button class="botao" value="Adicionar" onclick="Create(this),Exibe(this),Total()">+</button>
+                        <input type="hidden" id="nome" value="Abacaxi">
+                        <button class="botao-n" onclick="remove(this),Exibe(this), Total()">-</button>
+                    </div>
                 </div>
             </div>
 
@@ -52,10 +58,14 @@
                         <br>
                         Quantidade: <a id="numero2">0</a>
                     </p>
-                    <input type="hidden" id="nome" value="Banana">
-                    <button class="btn btn-success" value="Adicionar"onclick="Create(this),Exibe(this),Total()">Adicionar</button>
-
-                    <button class="btn btn-danger" onclick="remove()">Remover</button>
+                    <div class="botoes">
+                        <input type="hidden" id="nome" value="Banana">
+                        <button class="botao" value="Adicionar" onclick="Create(this),Exibe(this),Total()">+</button>
+                        <!-- <button class="btn btn-success" value="Adicionar" onclick="Create(this),Exibe(this),Total()">Adicionar</button>
+                    <button class="btn btn-danger" onclick="remove()">Remover</button> -->
+                        <input type="hidden" id="nome" value="Banana">
+                        <button class="botao-n" onclick="remove(this),Exibe(this), Total()">-</button>
+                    </div>
                 </div>
             </div>
 
@@ -68,10 +78,12 @@
                         <br>
                         Quantidade: <a id="numero3">0</a>
                     </p>
-                    <input type="hidden" id="nome" value="Laranja">
-                    <button class="btn btn-success" value="Adicionar" onclick="Create(this),Exibe(this),Total()">Adicionar</button>
-
-                    <button class="btn btn-danger">Remover</button>
+                    <div class="botoes">
+                        <input type="hidden" id="nome" value="Laranja">
+                        <button class="botao" value="Adicionar" onclick="Create(this),Exibe(this),Total()">+</button>
+                        <input type="hidden" id="nome" value="Laranja">
+                        <button class="botao-n" onclick="remove(this),Exibe(this), Total()">-</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,14 +94,16 @@
                 <div>
                     <img src="img/manga.jpg" alt="Manga" height="200px" width="200px">
                     <br>
-                    <p class="botão">R$16,99 o kil
+                    <p class="botão">R$16,99 o kilo
                         <br>
                         Quantidade: <a id="numero4">0</a>
                     </p>
-                    <input type="hidden" id="nome" value="Manga">
-                    <button class="btn btn-success" value="Adicionar" onclick="Create(this),Exibe(this),Total()">Adicionar</button>
-
-                    <button class="btn btn-danger">Remover</button>
+                    <div class="botoes">
+                        <input type="hidden" id="nome" value="Manga">
+                        <button class="botao" value="Adicionar" onclick="Create(this),Exibe(this),Total()">+</button>
+                        <input type="hidden" id="nome" value="Manga">
+                        <button class="botao-n" onclick="remove(this),Exibe(this), Total()">-</button>
+                    </div>
                 </div>
             </div>
 
@@ -98,14 +112,16 @@
                 <div>
                     <img src="img/maca.jpg" alt="Maçã" height="200px" width="200px">
                     <br>
-                    <p class="botão">7,99
+                    <p class="botão">7,99 o kilo
                         <br>
                         Quantidade: <a id="numero5">0</a>
                     </p>
-                    <input type="hidden" id="nome" value="Maçã">
-                    <button class="btn btn-success" value="Adicionar" onclick="Create(this),Exibe(this),Total()">Adicionar</button>
-
-                    <button class="btn btn-danger">Remover</button>
+                    <div class="botoes">
+                        <input type="hidden" id="nome" value="Maçã">
+                        <button class="botao" value="Adicionar" onclick="Create(this),Exibe(this),Total()">+</button>
+                        <input type="hidden" id="nome" value="Maçã">
+                        <button class="botao-n" onclick="remove(this),Exibe(this), Total()">-</button>
+                    </div>
                 </div>
             </div>
 
@@ -114,14 +130,16 @@
                 <div>
                     <img src="img/morango.jpg" alt="Morango" height="200px" width="200px">
                     <br>
-                    <p class="botão">R$19,99 o kil
+                    <p class="botão">R$19,99 o kilo
                         <br>
                         Quantidade: <a id="numero6">0</a>
                     </p>
-                    <input type="hidden" id="nome" value="Morango">
-                    <button class="btn btn-success" value="Adicionar" onclick="Create(this),Exibe(this),Total()">Adicionar</button>
-
-                    <button class="btn btn-danger">Remover</button>
+                    <div class="botoes">
+                        <input type="hidden" id="nome" value="Morango">
+                        <button class="botao" value="Adicionar" onclick="Create(this),Exibe(this),Total()">+</button>
+                        <input type="hidden" id="nome" value="Morango">
+                        <button class="botao-n" onclick="remove(this),Exibe(this), Total()">-</button>
+                    </div>
                 </div>
             </div>
         </div>
