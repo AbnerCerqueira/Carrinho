@@ -15,8 +15,8 @@
         <div id="total">
             <div>
                 <h2>Total a pagar</h3>
-                <div class="retangulo">R$ <a id="total-exibe"></a></div>
-                <button class="btn btn-success" , onclick="Fim()">Comprar</button>
+                    <div class="retangulo">R$ <a id="total-exibe"></a></div>
+                    <button class="btn btn-success" , onclick="Fim()">Comprar</button>
             </div>
         </div>
     </div>
@@ -25,51 +25,58 @@
 <body onload="insereBanco()">
     <div class="container" id="main">
         <div class="row">
+
+
             <div class="col-4 border border-black d-flex justify-content-center">
                 <div>
                     <img src="img/abacaxi.jpg" class="img" alt="abacaxi" height="200px" width="200px">
                     <p class="botão">R$29,99 o kilo
                         <br>
-                        Quantidade: <a id="numero"></a>
+                        Quantidade: <a id="numero1">0</a>
                     </p>
                     <input type="hidden" id="nome" value="Abacaxi">
-                    <button class="btn btn-success" value="Adicionar"
-                        onclick="Create(this), Total(), Exibe()">Adicionar</button>
+                    <button class="btn btn-success" value="Adicionar" onclick="Create(this),Exibe(this),Total()">Adicionar</button>
 
-                    <button class="btn btn-danger">Remover</button>
+                    <button class="btn btn-danger" onclick="remove(this)">Remover</button>
+                    <input type="hidden" id="nome" value="Abacaxi">
+
                 </div>
             </div>
+
+
             <div class="col-4 border border-black d-flex justify-content-center">
                 <div>
                     <img src="img/banana.jpg" alt="Banana" height="200px" width="200px">
                     <br>
                     <p class="botão">R$5,99 o kilo
                         <br>
-                        Quantidade: <a id="numero"></a>
+                        Quantidade: <a id="numero2">0</a>
                     </p>
                     <input type="hidden" id="nome" value="Banana">
-                    <button class="btn btn-success" value="Adicionar"
-                        onclick="Create(this),Total(),Exibe()">Adicionar</button>
+                    <button class="btn btn-success" value="Adicionar"onclick="Create(this),Exibe(this),Total()">Adicionar</button>
 
-                    <button class="btn btn-danger">Remover</button>
+                    <button class="btn btn-danger" onclick="remove()">Remover</button>
                 </div>
             </div>
+
+
             <div class="col-4 border border-black d-flex justify-content-center">
                 <div>
                     <img src="img/laranja.jpg" alt="Laranja" height="200px" width="200px">
                     <br>
                     <p class="botão">R$9,99 o kilo
                         <br>
-                        Quantidade: <a id="numero"></a>
+                        Quantidade: <a id="numero3">0</a>
                     </p>
                     <input type="hidden" id="nome" value="Laranja">
-                    <button class="btn btn-success" value="Adicionar"
-                        onclick="Create(this), Total(), Exibe()">Adicionar</button>
+                    <button class="btn btn-success" value="Adicionar" onclick="Create(this),Exibe(this),Total()">Adicionar</button>
 
                     <button class="btn btn-danger">Remover</button>
                 </div>
             </div>
         </div>
+
+
         <div class="row">
             <div class="col-4 border border-black d-flex justify-content-center">
                 <div>
@@ -77,41 +84,42 @@
                     <br>
                     <p class="botão">R$16,99 o kil
                         <br>
-                        Quantidade: <a id="numero"></a>
+                        Quantidade: <a id="numero4">0</a>
                     </p>
                     <input type="hidden" id="nome" value="Manga">
-                    <button class="btn btn-success" value="Adicionar"
-                        onclick="Create(this), Total(), Exibe()">Adicionar</button>
+                    <button class="btn btn-success" value="Adicionar" onclick="Create(this),Exibe(this),Total()">Adicionar</button>
 
                     <button class="btn btn-danger">Remover</button>
                 </div>
             </div>
+
+
             <div class="col-4 border border-black d-flex justify-content-center">
                 <div>
                     <img src="img/maca.jpg" alt="Maçã" height="200px" width="200px">
                     <br>
                     <p class="botão">7,99
                         <br>
-                        Quantidade: <a id="numero"></a>
+                        Quantidade: <a id="numero5">0</a>
                     </p>
                     <input type="hidden" id="nome" value="Maçã">
-                    <button class="btn btn-success" value="Adicionar"
-                        onclick="Create(this), Total(), Exibe()">Adicionar</button>
+                    <button class="btn btn-success" value="Adicionar" onclick="Create(this),Exibe(this),Total()">Adicionar</button>
 
                     <button class="btn btn-danger">Remover</button>
                 </div>
             </div>
+
+
             <div class="col-4 border border-black d-flex justify-content-center">
                 <div>
                     <img src="img/morango.jpg" alt="Morango" height="200px" width="200px">
                     <br>
                     <p class="botão">R$19,99 o kil
                         <br>
-                        Quantidade: <a id="numero"></a>
+                        Quantidade: <a id="numero6">0</a>
                     </p>
                     <input type="hidden" id="nome" value="Morango">
-                    <button class="btn btn-success" value="Adicionar"
-                        onclick="Create(this), Total(), Exibe()">Adicionar</button>
+                    <button class="btn btn-success" value="Adicionar" onclick="Create(this),Exibe(this),Total()">Adicionar</button>
 
                     <button class="btn btn-danger">Remover</button>
                 </div>

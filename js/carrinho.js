@@ -1,9 +1,9 @@
 function insereBanco() {
-    const banco = [{ id: Date.now(), nome: "Maçã", valor: 29.99 },
+    const banco = [{ id: Date.now(), nome: "Maçã", valor: 7.99 },
     { id: Date.now(), nome: "Banana", valor: 5.99 },
-    { id: Date.now(), nome: "Abacaxi", valor: 9.99 },
+    { id: Date.now(), nome: "Abacaxi", valor: 29.99 },
     { id: Date.now(), nome: "Manga", valor: 16.99 },
-    { id: Date.now(), nome: "Laranja", valor: 7.99 },
+    { id: Date.now(), nome: "Laranja", valor: 9.99 },
     { id: Date.now(), nome: "Morango", valor: 19.99 }
     ]
     const carrinho = []
@@ -47,24 +47,51 @@ function Create(button) {
     localStorage.setItem("bd", ds);
     sessionStorage.setItem("car", car);
 }
-function Exibe() {
+function Exibe(button) {
     const carrinho = JSON.parse(sessionStorage.getItem("car"));
-    let produto = document.querySelector("#nome").value
-    switch (produto) {
+    let nome = button.previousElementSibling.value;
+    console.log(nome)
+    switch (nome) {
         case ("Abacaxi"):
-            document.querySelector("#numero").innerHTML = carrinho[0].quantidade
+            document.querySelector("#numero1").innerHTML = carrinho[0].quantidade
+            break;
         case ("Banana"):
-            document.querySelector("#numero").innerHTML = carrinho[1].quantidade
+            document.querySelector("#numero2").innerHTML = carrinho[1].quantidade
+            break;
         case ("Laranja"):
-            document.querySelector("#numero").innerHTML = carrinho[2].quantidade
+            document.querySelector("#numero3").innerHTML = carrinho[2].quantidade
+            break;
         case ("Manga"):
-            document.querySelector("#numero").innerHTML = carrinho[3].quantidade
-        case ("Maça"):
-            document.querySelector("#numero").innerHTML = carrinho[4].quantidade
+            document.querySelector("#numero4").innerHTML = carrinho[3].quantidade
+            break;
+        case ("Maçã"):
+            document.querySelector("#numero5").innerHTML = carrinho[4].quantidade
+            break;
         case ("Morango"):
-            document.querySelector("#numero").innerHTML = carrinho[5].quantidade
+            document.querySelector("#numero6").innerHTML = carrinho[5].quantidade
+            break;
     }
     console.log(carrinho[0].quantidade)
+}
+function remove(button){
+    const dados = JSON.parse(localStorage.getItem("bd"));
+    const carrinho = JSON.parse(sessionStorage.getItem("car"));
+
+    let nome = button.previousElementSibling.value;
+
+
+    for (let i = 0; i < carrinho.length; i++) {
+        if (carrinho[i].nome == nome) {
+            carrinho[i].quantidade--;
+            break;
+        }
+    }
+
+    const ds = JSON.stringify(dados);
+    const car = JSON.stringify(carrinho);
+
+    localStorage.setItem("bd", ds);
+    sessionStorage.setItem("car", car);
 }
 function Total() {
     const carrinho = JSON.parse(sessionStorage.getItem("car"));
